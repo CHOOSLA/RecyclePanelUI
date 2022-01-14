@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #FFC000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.ac.sch.oopsla.PrimaryController">
+   <children>
+      <AnchorPane layoutX="37.0" layoutY="146.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="640.0" prefWidth="727.0" style="-fx-background-color: #203864;">
+               <center>
+                  <Pane fx:id="cameraPane" maxHeight="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <Button fx:id="backButton" layoutY="560.0" mnemonicParsing="false" onAction="#backTostart" prefHeight="80.0" prefWidth="80.0" text="뒤로가기" />
+            <Label fx:id="timeLabel" layoutX="674.0" layoutY="597.0" text="30" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="37.0" layoutY="14.0" prefHeight="126.0" prefWidth="727.0" style="-fx-background-color: #203864;">
+         <children>
+            <Button fx:id="titleButton" layoutX="40.0" layoutY="35.0" maxHeight="55.0" maxWidth="650.0" minHeight="55.0" minWidth="650.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="650.0" style="-fx-background-color: transparent;" text="봉투를 하단 카메라에 인식되도 올려주세요" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
