@@ -5,6 +5,7 @@ module kr.ac.sch.oopsla {
     requires java.desktop;
     requires javafx.swing;
     requires unirest.java;
+    requires jssc;
 
     opens kr.ac.sch.oopsla to javafx.fxml;
     exports kr.ac.sch.oopsla;

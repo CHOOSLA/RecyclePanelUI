@@ -38,6 +38,8 @@ import javafx.util.Duration;
 import javax.imageio.ImageIO;
 import javax.swing.SwingUtilities;
 
+import jssc.*;
+import static jssc.SerialPort.*;
 
 public class PrimaryController implements Initializable {
     @FXML
@@ -56,7 +58,7 @@ public class PrimaryController implements Initializable {
     Timeline timer;
     AtomicInteger time;
     ConnectServer server = null;
-
+    SerialPort port ;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         final SwingNode swingNode = new SwingNode();
@@ -70,6 +72,11 @@ public class PrimaryController implements Initializable {
         server.valueProperty().addListener((obs, oldValue, newValue) -> {
             if(newValue!=null){
                 titleButton.setText(newValue);
+                try {
+                    port.writeBytes("a".getBytes());
+                } catch (SerialPortException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -132,14 +139,22 @@ public class PrimaryController implements Initializable {
         timer.play();
 
 
+        port = new SerialPort("COM7");
+        try {
+            port.openPort();
+            port.setParams(9600, 8, 1, SerialPort.PARITY_NONE, false, false);
+        } catch (SerialPortException e) {
+            e.printStackTrace();
+        }
 
 
         cameraPane.getChildren().add(swingNode);
     }
 
-    public void backTostart() throws IOException {
+    public void backTostart() throws IOException, SerialPortException {
         timer.stop();
         server.cancel();
+        port.closePort();
         // App.webcam.close();
         App.setRoot("start");
 
