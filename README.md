@@ -1,8 +1,6 @@
 # RecyclePanelUI
 
-
-
-
+<br/>
 #### 초기로딩화면 : 웹캠을 항상 켜놓은 상태를 유지하기 위해서 웹캠을 확인하고 웹캠을 연결
 ![KakaoTalk_20220126_152613148_02](https://user-images.githubusercontent.com/87767242/153551271-b66220a3-efb4-4bab-8675-6f6aa46d3975.png)
 
